@@ -8,6 +8,7 @@ use PhpParser\NodeDumper;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitorAbstract;
 use PhpParser\ParserFactory;
+use PhpParser\PrettyPrinter;
 
 class MyNodeVisitor extends NodeVisitorAbstract
 {
@@ -34,6 +35,7 @@ CODE;
 $parser = (new ParserFactory())->createForHostVersion();
 $dumper = new NodeDumper();
 $traverser = new NodeTraverser();
+$prettyPrinter = new PrettyPrinter\Standard;
 
 $traverser->addVisitor(new MyNodeVisitor);
 
@@ -43,6 +45,10 @@ try {
     echo "\n";
 
     $traverser->traverse($ast);
+    echo "\n";
+
+    $code = $prettyPrinter->prettyPrintFile($ast);
+    echo $code . "\n";
 
 } catch (Error $error) {
     echo "Parse error: {$error->getMessage()}\n";
