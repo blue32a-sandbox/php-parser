@@ -1,0 +1,15 @@
+{
+    "name": "PHP",
+    "dockerComposeFile": ["../compose.yaml"],
+    "service": "php",
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "EditorConfig.EditorConfig",
+                "mhutchie.git-graph",
+                "eamodio.gitlens"
+            ]
+        }
+    }
+}

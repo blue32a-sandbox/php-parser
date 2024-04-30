@@ -1,0 +1,7 @@
+services:
+  php:
+    build: ./docker/php
+    tty: true
+    volumes:
+      - .:/var/www/html:cached
+    working_dir: /var/www/html
