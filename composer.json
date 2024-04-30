@@ -1,0 +1,11 @@
+{
+    "name": "blue32a-sandbox/php-parser",
+    "description": "PHP AST",
+    "type": "project",
+    "license": "proprietary",
+    "private": true,
+    "minimum-stability": "stable",
+    "require": {
+        "nikic/php-parser": "^5.0"
+    }
+}
